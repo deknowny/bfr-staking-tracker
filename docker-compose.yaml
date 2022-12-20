@@ -1,0 +1,16 @@
+version: "3.7"
+
+
+services:
+  bfr-staking-tracker:
+    container_name: bfr-staking-tracker
+    build: ./bot
+    volumes:
+      - ./bot/src:/bot/src/
+      - ./secrets/users.json:/bot/users.json/
+      - ./bot/abi:/bot/abi/
+    environment:
+      - VK_BOT_GROUP_TOKEN
+      - L1_RPC_URL
+      - ARBITRUM_RPC_URL
+    command: python -m src

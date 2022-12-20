@@ -1,0 +1,5 @@
+.idea/
+secrets/
+!secrets/README.md
+.vscode/
+.DS_store
